@@ -2,64 +2,88 @@
 <html>
   <head>
     <title>YouTube Sub Manager</title>
-    <script src="lib/jquery.js"></script>
-    <script src="popup.js"></script>
-    
-    <style type="text/css">
-      body {
-        min-width: 500px;
-        max-width: 100%;
-        position: relative;
-        vertical-align:middle;
-      }
 
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+      <script src="lib/jquery.js"></script>
+      <script src="popup.js"></script>
+    
+      <style type="text/css">
+      	body {
+    	min-width: 500px;
+	max-width: 100%;
+	position: relative;
+	vertical-align:middle;
+	}
+	
       .center{
 	  margin: 0 auto;
 	  display: block;
-      }
-
-      .block{
+      	}
+      	
+      	.block{
 	  display: inline-block;
+	}
+	
+	.wrapper {
+	    text-align: center;
       }
+	.wrapper div{
+	    display:inline-block;
+	    margin-left:5px;
+	    margin-right:5px;
+	    color:#FFF;
+	    background-color:darkgray;
+	}
+	.sidebar{
+	    width:500px;
+	    margin-top: 5px;
+	}
 
-      .wrapper {
-	  text-align: center;
-      }
-      .wrapper div{
-	  display:inline-block;
-	  margin-left:5px;
-	  margin-right:5px;
-	  color:#FFF;
-	  background-color:darkgray;
-      }
-      .sidebar{
-	  width:500px;
-	  margin-top: 5px;
-      }
+	.header{
+	    text-align: center;
+	}
+	.row{
+	    margin-bottom: 15px;
+	}
     </style>
   </head>
   <body>
     <div>
-      <h1>YouTube Sub Manager</h1>
-      <p>
-	Hide Watched:
-	<input type="checkbox" id="hidewatched"></input>
-      </p>
-      <p>
-	Hide Streams:
-	<input type="checkbox" id="hidestreams"></input>
-      </p>
+      <div class="row">
+	<div class="col s12">
+	  <h2 class="header">YouTube SubMan</h2>
+	</div>
+      </div>
+      <div class="row">
+	<div class="col s4 offset-s2">
+	  <input type="checkbox" class="filled-in" id="hidewatched"></input>
+	  <label for="hidewatched">Hide Watched</label>
+	</div>
+	<div class="col s4 ">
+	  <input type="checkbox" class="filled-in" id="hidestreams" />
+	  <label for="hidestreams">Hide Streams</label>
+	</div>
+      </div>
       <div id="videoPreview" class="center" width="425" height="349">
       </div>
-      <div class="sidebar">
+      <div class="row">
 	<div class="wrapper">
 	  <a id="embedLink" class="block" target="_blank">Embed Link</a>
 	  <a id="regLink" class="block" target="_blank">Normal Link</a>
 	</div>
 	<div class="wrapper">
-	  <button id="prevVideo" class="block" ><-</button>
-	  <button id="viewUnplayed" class="block" >Load subs</button>
-	  <button id="nextVideo" class="block" >-></button>
+	  <a id="prevVideo" class="block btn-floating btn-large waves-effect waves-light teal lighten-2" >
+	    <i class="material-icons left" style="-webkit-transform: rotate(180deg);">trending_flat</i>
+	  </a>
+	  <a id="viewUnplayed" class="block waves-effect waves-light btn-large teal lighten-2" >Load subs</a>
+	  <a id="nextVideo" class="block btn-floating btn-large waves-effect waves-light teal lighten-2" >
+	    <i class="material-icons left">trending_flat</i>
+	  </a>
       </div>
       </div>
     <div>
