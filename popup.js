@@ -2,6 +2,7 @@
 
 var link_list = [];
 var gIndex = 0;
+var listMode = true;
 
 function displayVideoLink(){
     var htm = '<iframe class="center" width="425" height="349" src="http://www.youtube.com/embed/' + link_list[gIndex] + '?rel=0" frameborder="0" allowfullscreen ></iframe>';
@@ -77,9 +78,6 @@ $( document ).ready(function(){
 	}
 	
     });
-
-
-
 
     $('#hidewatched').change(function(){
 	settings.hidewatched = this.checked;
